@@ -1,0 +1,14 @@
+https://aws.amazon.com/devops/what-is-devops/?nc1=h_ls
+https://aws.amazon.com/devops/continuous-integration/
+https://codefresh.io/learn/continuous-integration/
+https://aws.amazon.com/devops/continuous-delivery/
+https://reqtest.com/en/knowledgebase/what-is-waterfall-methodology/
+https://devoxsoftware.com/blog/top-7-kpi-for-software-development/
+https://sentrio.io/blog/deployment-frequency/
+https://docs.aws.amazon.com/wellarchitected/latest/devops-guidance/code-review.html
+https://es.wikipedia.org/wiki/Par%C3%A1lisis_del_an%C3%A1lisis#V%C3%A9ase_tambi%C3%A9n
+https://docs.aws.amazon.com/wellarchitected/latest/devops-guidance/anti-patterns-for-continuous-integration.html
+https://about.gitlab.com/topics/devsecops/sast-vs-dast/
+https://www.sasa-software.com/uncategorized/learning-network-protection-what-is-a-sandbox/
+https://www.apriorit.com/dev-blog/545-sandbox-evading-malware
+https://www.cloudflare.com/nl-nl/learning/cdn/glossary/what-is-cache-control/
