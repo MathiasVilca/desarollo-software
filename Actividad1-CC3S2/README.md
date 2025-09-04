@@ -1,5 +1,5 @@
 Actividad 1 - Mathias Joaquin Vilca Perez
-01/09/25 - ???
+01/09/25 - 06:23
 Hecho en Ubuntu 24.04.3 LTS
 
 #### 4.1 DevOps vs. cascada tradicional (investigación + comparación)
