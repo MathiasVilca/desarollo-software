@@ -1,0 +1,209 @@
+Script started on 2025-09-15 15:23:07-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="91" LINES="45"]
+[?2004h]0;exsos@SAMSON-LOQ: ~/lab-cliexsos@SAMSON-LOQ:~/lab-cli$ cd ..
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ cd /etc/
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: /etcexsos@SAMSON-LOQ:/etc$ ls -a > ~/etc_lista.txtls -a > ~/etc_lista.txt
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: /etcexsos@SAMSON-LOQ:/etc$ find /tmp -maxdepth 1 -type f \( -name '*.txt' -o -name '*.doc' \) | wc -l]0;exsos@SAMSON-LOQ: /etcexsos@SAMSON-LOQ:/etc$ find /tmp -maxdepth 1 -type f \( -name '*.txt' -o -name '*.doc' \) | wc -l
+[?2004l3
+[?2004h]0;exsos@SAMSON-LOQ: /etcexsos@SAMSON-LOQ:/etc$ printf "Línea1\nLínea2\n" > test.txtprintf "Línea1\nLínea2\n" > test.txt
+[?2004lbash: test.txt: Permiso denegado
+[?2004h]0;exsos@SAMSON-LOQ: /etcexsos@SAMSON-LOQ:/etc$ printf "Línea1\nLínea2\n" > test.txt[1@s[1@u[1@d[1@o[1@ 
+[?2004lbash: test.txt: Permiso denegado
+[?2004h]0;exsos@SAMSON-LOQ: /etcexsos@SAMSON-LOQ:/etc$ sudo printf "Línea1\nLínea2\n" > test.txt[1@s[1@u[1@ 
+[?2004lbash: test.txt: Permiso denegado
+[?2004h]0;exsos@SAMSON-LOQ: /etcexsos@SAMSON-LOQ:/etc$ sudo su printf "Línea1\nLínea2\n" > test.txt
+[?2004lbash: test.txt: Permiso denegado
+[?2004h]0;exsos@SAMSON-LOQ: /etcexsos@SAMSON-LOQ:/etc$ su printf "Línea1\nLínea2\n" > test.txtcd .. 
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: /exsos@SAMSON-LOQ:/$ cd ..su printf "Línea1\nLínea2\n" > test.txt[5@do su
+[?2004lbash: test.txt: Permiso denegado
+[?2004h]0;exsos@SAMSON-LOQ: /exsos@SAMSON-LOQ:/$ cd Esc~
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ 
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ cd ~printf "Línea1\nLínea2\n" > test.txt
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ ls noexiste 2>> errores.logls noexiste 2>> errores.log
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ 
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ find . -maxdepth 1 -name 'archivo*.txt' | xargs echo rmfind . -maxdepth 1 -name 'archivo*.txt' | xargs echo rm
+[?2004lrm
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ cd /tempmp
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: /tmpexsos@SAMSON-LOQ:/tmp$ cd /tmpfind . -maxdepth 1 -name 'archivo*.txt' | xargs echo rm
+[?2004lrm ./archivo1.txt ./archivo2.txt
+[?2004h]0;exsos@SAMSON-LOQ: /tmpexsos@SAMSON-LOQ:/tmp$ find . -maxdepth 1 -name 'archivo*.txt' | xargs echo rm rm rm rm rmrm
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: /tmpexsos@SAMSON-LOQ:/tmp$ find . -maxdepth 1 -name 'archivo*.txt' | xargs rm
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: /tmpexsos@SAMSON-LOQ:/tmp$ nl ~/test.txt
+[?2004l     1	Línea1
+     2	Línea2
+[?2004h]0;exsos@SAMSON-LOQ: /tmpexsos@SAMSON-LOQ:/tmp$ xcd +~
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ cd ~nl ~/test.txtwlc -l lista.txt
+[?2004lwc: lista.txt: No existe el archivo o el directorio
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ wc -l lista.txtelista.txttlista.txtclista.txt_lista.txt
+[?2004l245 etc_lista.txt
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ sudo adduser devsecsudo adduser devsec
+[?2004l[sudo] contraseña para exsos: 
+Lo siento, pruebe otra vez.
+[sudo] contraseña para exsos: 
+info: Añadiendo el usuario `devsec' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Añadiendo el nuevo grupo `devsec' (1001) ...
+info: Adding new user `devsec' (1001) with group `devsec (1001)' ...
+info: Creando el directorio personal `/home/devsec' ...
+info: Copiando los ficheros desde `/etc/skel' ...
+Nueva contraseña: 
+CONTRASEÑA INCORRECTA: La contraseña tiene menos de 8 caracteres
+Vuelva a escribir la nueva contraseña: 
+Las contraseñas no coinciden.
+Nueva contraseña: 
+CONTRASEÑA INCORRECTA: La contraseña no supera la verificación de diccionario - Es demasiado simple/sistemática.
+Vuelva a escribir la nueva contraseña: 
+passwd: contraseña actualizada correctamente
+Cambiando la información de usuario para devsec
+Introduzca el nuevo valor, o presione INTRO para el predeterminado
+	Nombre completo []: 
+	Número de habitación []: 
+	Teléfono del trabajo []: 
+	Teléfono de casa []: 
+	Otro []: 
+¿Es correcta la información? [S/n] S
+info: Adding new user `devsec' to supplemental / extra groups `users' ...
+info: Añadiendo al usuario `devsec' al grupo `users' ...
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ sudo addgroup ops
+[?2004linfo: Seleccionando un GID del rango 1000 a 59999 ...
+info: Añadiendo el grupo `ops' (GID 1002) ...
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ sudo usermod -aG ops devsecsudo usermod -aG ops devsec
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ touch [REDACTED]o.txttouch [REDACTED]o.txt
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ sudo chown devsec:ops [REDACTED]o.txtsudo chown devsec:ops [REDACTED]o.txt
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ sudo chmod 640 [REDACTED]o.txtsudo chmod 640 [REDACTED]o.txt
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ ps aux | grep bashps aux | grep bash
+[?2004lexsos       6981  0.0  0.0  20196  5900 pts/0    Ss   15:08   0:00 bash
+exsos       7621  0.0  0.0  20196  5776 pts/1    Ss   15:23   0:00 bash -i
+exsos       7958  0.0  0.0  17832  2384 pts/1    S+   15:36   0:00 grep --color=auto bash
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ echo no lo voy a matar"[1@" "e"l" "p"r"o"c"e"s"o" "p"e"r"o" "s"e" "h"a"r"i"a" "c"o"n" "k"i"l"l" "-"1"5" "6"9"8"1"
+[?2004lno voy a matar el proceso pero se haria con kill -15 6981
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ systemctl status systemd-logindsystemctl status systemd-logind
+[?2004l[?1h=● systemd-logind.service - User Login Management
+     Loaded: loaded (]8;;file://SAMSON-LOQ/usr/lib/systemd/system/systemd-logind.service/usr/lib/systemd/system/systemd-logind.service]8;;; static)
+    Drop-In: /usr/lib/systemd/system/systemd-logind.service.d
+             └─]8;;file://SAMSON-LOQ/usr/lib/systemd/system/systemd-logind.service.d/dbus.confdbus.conf]8;;
+     Active: active (running) since Mon 2025-09-15 14:41:15 -05; 1h 1min ago
+       Docs: ]8;;man:sd-login(3)man:sd-login(3)]8;;
+             ]8;;man:systemd-logind.service(8)man:systemd-logind.service(8)]8;;
+             ]8;;man:logind.conf(5)man:logind.conf(5)]8;;
+             ]8;;man:org.freedesktop.login1(5)man:org.freedesktop.login1(5)]8;;
+   Main PID: 1414 (systemd-logind)
+     Status: "Processing requests..."
+      Tasks: 1 (limit: 18585)
+   FD Store: 13 (limit: 512)
+     Memory: 3.7M (peak: 6.9M)
+        CPU: 199ms
+     CGroup: /system.slice/systemd-logind.service
+             └─1414 /usr/lib/systemd/systemd-logind
+
+sep 15 14:41:15 SAMSON-LOQ systemd-logind[1414]: Watching system buttons on /dev/input/eve>
+sep 15 14:41:15 SAMSON-LOQ systemd-logind[1414]: Watching system buttons on /dev/input/eve>
+sep 15 14:41:15 SAMSON-LOQ systemd-logind[1414]: Watching system buttons on /dev/input/eve>
+sep 15 14:41:15 SAMSON-LOQ systemd-logind[1414]: Watching system buttons on /dev/input/eve>
+sep 15 14:41:15 SAMSON-LOQ systemd-logind[1414]: Watching system buttons on /dev/input/eve>
+sep 15 14:41:15 SAMSON-LOQ systemd[1]: Started systemd-logind.service - User Login Managem>
+sep 15 14:41:16 SAMSON-LOQ systemd-logind[1414]: New session c1 of user gdm.
+sep 15 14:43:34 SAMSON-LOQ systemd-logind[1414]: New session 2 of user exsos.
+sep 15 14:43:41 SAMSON-LOQ systemd-logind[1414]: Session c1 logged out. Waiting for proces>
+sep 15 14:43:41 SAMSON-LOQ systemd-logind[1414]: Removed session c1.
+lines 1-28/28 (END)[?1l>[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ journalctl -u systemd-logind -n 10journalctl -u systemd-logind -n 10
+[?2004l[?1h=sep 15 14:41:15 SAMSON-LOQ systemd-logind[1414]: Watching system buttons on /dev/input/eve>
+sep 15 14:41:15 SAMSON-LOQ systemd-logind[1414]: Watching system buttons on /dev/input/eve>
+sep 15 14:41:15 SAMSON-LOQ systemd-logind[1414]: Watching system buttons on /dev/input/eve>
+sep 15 14:41:15 SAMSON-LOQ systemd-logind[1414]: Watching system buttons on /dev/input/eve>
+sep 15 14:41:15 SAMSON-LOQ systemd-logind[1414]: Watching system buttons on /dev/input/eve>
+sep 15 14:41:15 SAMSON-LOQ systemd[1]: Started systemd-logind.service - User Login Managem>
+sep 15 14:41:16 SAMSON-LOQ systemd-logind[1414]: New session c1 of user gdm.
+sep 15 14:43:34 SAMSON-LOQ systemd-logind[1414]: New session 2 of user exsos.
+sep 15 14:43:41 SAMSON-LOQ systemd-logind[1414]: Session c1 logged out. Waiting for proces>
+sep 15 14:43:41 SAMSON-LOQ systemd-logind[1414]: Removed session c1.
+lines 1-10/10 (END)[?1l>[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ sleep 100 &sleep 100 &
+[?2004l[1] 8042
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ ps aux | echo sleep
+[?2004lsleep
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ ps aux | echo sleepgreop sleep
+[?2004lexsos       8042  0.0  0.0  17204  2172 pts/1    S    15:42   0:00 sleep 100
+exsos       8066  0.0  0.0  17832  2384 pts/1    S+   15:43   0:00 grep --color=auto sleep
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ kill -9 8042
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ kill -9 8042ps aux | grep sleep
+[?2004lexsos       8070  0.0  0.0  17832  2384 pts/1    S+   15:44   0:00 grep --color=auto sleep
+[1]+  Terminado (killed)      sleep 100
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ namei -l [REDACTED]o.txtnamei -l [REDACTED]o.txt
+[?2004lf: [REDACTED]o.txt
+-rw-r----- devsec ops [REDACTED]o.txt
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ id devsecid devsec
+[?2004luid=1001(devsec) gid=1001(devsec) grupos=1001(devsec),100(users),1002(ops)
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ grep root /etc/passwdgrep root /etc/passwd
+[?2004lroot:x:0:0:root:/root:/bin/bash
+nm-openvpn:x:121:122:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ printf "linea1: dato1\nlinea2: dato2\n" > datos.txtprintf "linea1: dato1\nlinea2: dato2\n" > datos.txt
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ sed 's/dato1/[REDACTED]o/' datos.txt > nuevo.txt's/dato1/[REDACTED]o/' datos.txt > nuevo.txt
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ printf "hola\n" | tr 'a-z' 'A-Z' | tee mayus.txtprintf "hola\n" | tr 'a-z' 'A-Z' | tee mayus.txt
+[?2004lHOLA
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ find /tmp -mtime -5 -type ffind /tmp -mtime -5 -type f
+[?2004lfind: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-apache2.service-wlicsN’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-systemd-resolved.service-6qYqKe’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-systemd-timesyncd.service-muhzOi’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-bluetooth.service-O3MgAT’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-polkit.service-zHgnxN’: Permiso denegado
+/tmp/gdm3-config-err-lrQXmW
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-systemd-logind.service-6vIr36’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-upower.service-bWjNaL’: Permiso denegado
+find: ‘/tmp/snap-private-tmp’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-power-profiles-daemon.service-kFcYTC’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-fwupd.service-gEjUNE’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-ModemManager.service-zRAGqq’: Permiso denegado
+/tmp/archivo3.doc
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-systemd-oomd.service-QYzHhW’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-switcheroo-control.service-THLwwd’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-colord.service-mF13fc’: Permiso denegado
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ sudo find /tmp -mtime -5 -type ffind /tmp -mtime -5 -type f
+[?2004l/tmp/gdm3-config-err-lrQXmW
+/tmp/archivo3.doc
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ ^C[?2004l[?2004h[?2004l
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ find /tmp -mtime -5 -type ffind /tmp -mtime -5 -type f
+[?2004lfind: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-apache2.service-wlicsN’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-systemd-resolved.service-6qYqKe’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-systemd-timesyncd.service-muhzOi’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-bluetooth.service-O3MgAT’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-polkit.service-zHgnxN’: Permiso denegado
+/tmp/gdm3-config-err-lrQXmW
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-systemd-logind.service-6vIr36’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-upower.service-bWjNaL’: Permiso denegado
+find: ‘/tmp/snap-private-tmp’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-power-profiles-daemon.service-kFcYTC’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-fwupd.service-gEjUNE’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-ModemManager.service-zRAGqq’: Permiso denegado
+/tmp/archivo3.doc
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-systemd-oomd.service-QYzHhW’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-switcheroo-control.service-THLwwd’: Permiso denegado
+find: ‘/tmp/systemd-private-b13049aaba7247e2aba5303cbddd2eab-colord.service-mF13fc’: Permiso denegado
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ ls /etc | grep conf | sort | tee lista_conf.txt | wc -lls /etc | grep conf | sort | tee lista_conf.txt | wc -l
+[?2004l42
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ cd lab-cli/
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~/lab-cliexsos@SAMSON-LOQ:~/lab-cli$ cd evidencias/grep -Ei 'error|fail' evidencias/sesion.txt | tee evidencias/hallazgos.txt]0;exsos@SAMSON-LOQ: ~/lab-cliexsos@SAMSON-LOQ:~/lab-cli$ grep -Ei 'error|fail' evidencias/sesion.txt | tee evidencias/hallazgos.txt
+[?2004l[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ ls noexiste 2>> errores.logls noexiste 2>> errores.log
+[?2004h]0;exsos@SAMSON-LOQ: ~/lab-cliexsos@SAMSON-LOQ:~/lab-cli$ cd /etc
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: /etcexsos@SAMSON-LOQ:/etc$ cd /etcgrep -Ei 'error|fail' evidencias/sesion.txt | tee evidencias/hallazgos.txt
+<file lista_conf.txt && head lista_conf.txtfile lista_conf.txt && head lista_conf.txt
+[?2004llista_conf.txt: cannot open `lista_conf.txt' (No such file or directory)
+head: no se puede abrir 'lista_conf.txt' para lectura: No existe el archivo o el directorio
+[?2004h]0;exsos@SAMSON-LOQ: /etcexsos@SAMSON-LOQ:/etc$ cd ..
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: /exsos@SAMSON-LOQ:/$ file lista_conf.txt && head lista_conf.txtfile lista_conf.txt && head lista_conf.txcd ~
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ file lista_conf.txt && head lista_conf.txtfile lista_conf.txt && head lista_conf.txt
+[?2004llista_conf.txt: ASCII text
+adduser.conf
+apg.conf
+brltty.conf
+ca-certificates.conf
+dconf
+debconf.conf
+deluser.conf
+dhcpcd.conf
+e2scrub.conf
+fprintd.conf
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ cat mayus.txtcat mayus.txt
+[?2004lHOLA
+[?2004h]0;exsos@SAMSON-LOQ: ~exsos@SAMSON-LOQ:~$ exit
+[?2004lexit
+
+Script done on 2025-09-15 15:50:10-05:00 [COMMAND_EXIT_CODE="0"]

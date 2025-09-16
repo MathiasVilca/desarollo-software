@@ -1,0 +1,2 @@
+crt=/home/exsos/Escritorio/General/desarrollo-software/a/certs/miapp.local.crt
+key=/home/exsos/Escritorio/General/desarrollo-software/a/certs/miapp.local.key

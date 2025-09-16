@@ -1,0 +1,5 @@
+ * Running on http://192.168.18.186:8080
+[33mPress CTRL+C to quit[0m
+{"ts": "2025-09-13T08:05:01-0500", "level": "INFO", "event": "request", "method": "GET", "path": "/", "remote": "127.0.0.1", "proto": "http"}
+127.0.0.1 - - [13/Sep/2025 08:05:01] "GET / HTTP/1.1" 200 -
+{"ts": "2025-09-13T08:05:01-0500", "level": "INFO", "event": "request", "method": "POST", "path": "/", "remote": "127.0.0.1", "proto": "http"}

@@ -1,0 +1,50 @@
+sep 13 07:41:41 SAMSON-LOQ nginx[15060]: 2025/09/13 07:41:41 [notice] 15060#15060: signal process started
+sep 13 07:41:41 SAMSON-LOQ systemd[1]: Reloaded nginx.service - A high performance web server and a reverse proxy server.
+sep 13 07:46:22 SAMSON-LOQ systemd[1]: Reloading nginx.service - A high performance web server and a reverse proxy server...
+sep 13 07:46:22 SAMSON-LOQ nginx[19812]: 2025/09/13 07:46:22 [notice] 19812#19812: signal process started
+sep 13 07:46:22 SAMSON-LOQ systemd[1]: Reloaded nginx.service - A high performance web server and a reverse proxy server.
+sep 13 07:48:10 SAMSON-LOQ systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+sep 13 07:48:10 SAMSON-LOQ systemd[1]: nginx.service: Deactivated successfully.
+sep 13 07:48:10 SAMSON-LOQ systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+sep 13 07:48:15 SAMSON-LOQ systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+sep 13 07:48:15 SAMSON-LOQ systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+sep 13 07:49:23 SAMSON-LOQ systemd[1]: Reloading nginx.service - A high performance web server and a reverse proxy server...
+sep 13 07:49:23 SAMSON-LOQ nginx[20300]: 2025/09/13 07:49:23 [notice] 20300#20300: signal process started
+sep 13 07:49:23 SAMSON-LOQ systemd[1]: Reloaded nginx.service - A high performance web server and a reverse proxy server.
+sep 13 07:54:03 SAMSON-LOQ systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+sep 13 07:54:03 SAMSON-LOQ systemd[1]: nginx.service: Deactivated successfully.
+sep 13 07:54:03 SAMSON-LOQ systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+sep 13 07:55:12 SAMSON-LOQ systemd[1]: nginx.service: Unit cannot be reloaded because it is inactive.
+sep 13 07:57:11 SAMSON-LOQ systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+sep 13 07:57:11 SAMSON-LOQ nginx[21319]: 2025/09/13 07:57:11 [emerg] 21319#21319: cannot load certificate "/home/exsos/Escritorio/General/desarrollo-software/a/certs/miapp.local.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/home/exsos/Escritorio/General/desarrollo-software/a/certs/miapp.local.crt, r) error:10000080:BIO routines::no such file)
+sep 13 07:57:11 SAMSON-LOQ nginx[21319]: nginx: configuration file /etc/nginx/nginx.conf test failed
+sep 13 07:57:11 SAMSON-LOQ systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+sep 13 07:57:11 SAMSON-LOQ systemd[1]: nginx.service: Failed with result 'exit-code'.
+sep 13 07:57:11 SAMSON-LOQ systemd[1]: Failed to start nginx.service - A high performance web server and a reverse proxy server.
+sep 13 08:00:10 SAMSON-LOQ systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+sep 13 08:00:10 SAMSON-LOQ nginx[21596]: 2025/09/13 08:00:10 [emerg] 21596#21596: cannot load certificate "/home/exsos/Escritorio/General/desarrollo-software/a/certs/miapp.local.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/home/exsos/Escritorio/General/desarrollo-software/a/certs/miapp.local.crt, r) error:10000080:BIO routines::no such file)
+sep 13 08:00:10 SAMSON-LOQ nginx[21596]: nginx: configuration file /etc/nginx/nginx.conf test failed
+sep 13 08:00:10 SAMSON-LOQ systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+sep 13 08:00:10 SAMSON-LOQ systemd[1]: nginx.service: Failed with result 'exit-code'.
+sep 13 08:00:10 SAMSON-LOQ systemd[1]: Failed to start nginx.service - A high performance web server and a reverse proxy server.
+sep 13 08:00:29 SAMSON-LOQ systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+sep 13 08:00:29 SAMSON-LOQ nginx[21625]: 2025/09/13 08:00:29 [emerg] 21625#21625: cannot load certificate "/home/exsos/Escritorio/General/desarrollo-software/a/certs/miapp.local.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/home/exsos/Escritorio/General/desarrollo-software/a/certs/miapp.local.crt, r) error:10000080:BIO routines::no such file)
+sep 13 08:00:29 SAMSON-LOQ nginx[21625]: nginx: configuration file /etc/nginx/nginx.conf test failed
+sep 13 08:00:29 SAMSON-LOQ systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+sep 13 08:00:29 SAMSON-LOQ systemd[1]: nginx.service: Failed with result 'exit-code'.
+sep 13 08:00:29 SAMSON-LOQ systemd[1]: Failed to start nginx.service - A high performance web server and a reverse proxy server.
+sep 13 08:02:10 SAMSON-LOQ systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+sep 13 08:02:10 SAMSON-LOQ nginx[21986]: nginx: [emerg] bind() to 0.0.0.0:8080 failed (98: Address already in use)
+sep 13 08:02:11 SAMSON-LOQ nginx[21986]: nginx: [emerg] bind() to 0.0.0.0:8080 failed (98: Address already in use)
+sep 13 08:02:11 SAMSON-LOQ nginx[21986]: nginx: [emerg] bind() to 0.0.0.0:8080 failed (98: Address already in use)
+sep 13 08:02:12 SAMSON-LOQ nginx[21986]: nginx: [emerg] bind() to 0.0.0.0:8080 failed (98: Address already in use)
+sep 13 08:02:12 SAMSON-LOQ nginx[21986]: nginx: [emerg] bind() to 0.0.0.0:8080 failed (98: Address already in use)
+sep 13 08:02:13 SAMSON-LOQ nginx[21986]: nginx: [emerg] still could not bind()
+sep 13 08:02:13 SAMSON-LOQ systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+sep 13 08:02:13 SAMSON-LOQ systemd[1]: nginx.service: Failed with result 'exit-code'.
+sep 13 08:02:13 SAMSON-LOQ systemd[1]: Failed to start nginx.service - A high performance web server and a reverse proxy server.
+sep 13 08:04:12 SAMSON-LOQ systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+sep 13 08:04:12 SAMSON-LOQ systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+sep 13 08:05:02 SAMSON-LOQ systemd[1]: Reloading nginx.service - A high performance web server and a reverse proxy server...
+sep 13 08:05:02 SAMSON-LOQ nginx[22366]: 2025/09/13 08:05:02 [notice] 22366#22366: signal process started
+sep 13 08:05:02 SAMSON-LOQ systemd[1]: Reloaded nginx.service - A high performance web server and a reverse proxy server.
