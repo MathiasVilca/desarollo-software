@@ -18,3 +18,12 @@ Sección 3:
 5. `find /tmp -mtime -5 -type f`: `-mtime` establece el tiempo de modificados a 5 días, y `-type f` establece el tipo a file/archivo 
 6. `ls /etc | grep conf | sort | tee lista_conf.txt | wc -l`: `ls /etc` muestra todos los archivos y directorios en `/etc` no ocultos, `grep conf` busca el patron `conf` en el contenido de `/etc`, `sort` lo ordena, y `tee` lo guarda en `lista_conf.txt`, finalmente `wc -l` cuenta las lineas de archivo, las respuestas se pasan como argumentos via el pipeline
 7. `grep -Ei 'error|fail' evidencias/sesion.txt | tee evidencias/hallazgos.txt`: `grep` busca en el `evidencias/sesion.txt` de sesión cualquier linea que contenga el patron `error` o `fail`, `tee` guarda las lineas de la busqueda en `evidencias/hallazgos.txt`
+
+**Output de comandos de auditoría**
+![alt text](output_audit_1.png)
+![alt text](output_audit_2.png)
+![alt text](output_audit_3.png)
+
+**Mini-Pipeline**
+![alt text](mini_pipeline.png)
+
