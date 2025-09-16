@@ -1,0 +1,1 @@
+[?2004l[?2004h]0;exsos@SAMSON-LOQ: ~[01;32mexsos@SAMSON-LOQ[00m:[01;34m~[00m$ [7mls noexiste 2>> errores.log[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls noexiste 2>> errores.log[C[C[C[C[C[C
