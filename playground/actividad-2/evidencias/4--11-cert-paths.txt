@@ -1,2 +1,0 @@
-crt=/home/exsos/Escritorio/General/desarrollo-software/playground/actividad-2/certs/miapp.local.crt
-key=/home/exsos/Escritorio/General/desarrollo-software/playground/actividad-2/certs/miapp.local.key
