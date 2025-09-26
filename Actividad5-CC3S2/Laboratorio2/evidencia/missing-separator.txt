@@ -1,0 +1,1 @@
+Makefile_bad:26: *** falta un separador (¿quiso decir TAB en vez de 8 espacios?).  Alto.
