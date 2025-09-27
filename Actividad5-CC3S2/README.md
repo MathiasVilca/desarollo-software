@@ -1,4 +1,4 @@
-##Resumen del entorno:
+## Resumen del entorno:
 - OS: Ubuntu 24.04.3 LTS
 - Shell(Bash): 5.2.21(1)-release
 - make: GNU Make 4.3
@@ -6,8 +6,8 @@
 - python3: Python 3.12.3
 - sha256sum: (GNU coreutils) 9.4
 
-##PARTE 1:
-###1.2.-
+## PARTE 1:
+### 1.2.-
 1. `make help` primero usa `grep` para hallar todas las lineas del makefile (almacenadas en `$MAKEFILE_LIST` ya que este contiene el ultimo makefile analizado por make) las cuales cumplen la expresión regular: `^[a-zA-Z0-9_-]+:.*?## `, la cual solo agarra las lineas de los targets del makefile, excepto `$(OUT_DIR)/hello.txt: $(SRC_DIR)/hello.py` debido a que en el inicio contiene `$`, estas lineas luego las pasa por el pipeline a `awk`, que se encarga de extraer tanto el nombre del target y la descripción presente en el comentario de la misma linea (tomando `:##` como separadores y tomando la primera y tercera columna), usando `printf` para imprimirlas. `.DEFAULT_GOAL := help` toma el target help como el elegido por defecto, osea que si se corre `make` sin ningun target, se elegirá este por defecto. `.PHONY` sirve para aclarar al `make` que sus valores son tareas y no archivos, para que siempre corra los targets incluso si ya existe un archivo con el mismo nombre que uno de los targets.
 2. Target tiene como dependencia `$(OUT_DIR)/hello.txt`, lo cual puede ser un archivo de texto en `$(OUT_DIR)` u otro target, dependiendo si el primero existe o no. En la primera corrida el target `build` ejecuta otro target `$(OUT_DIR)/hello.txt` ya que no existe ese archivo objetivo, el cual termina creando `out/hello.txt` gracias a `$(PYTHON) $< > $@`, usando la variable `$@` la cual toma el nombre del target generado, y `$<` que toma la primera dependencia, en este caso el archivo `$(SRC_DIR)/hello.py` que genera el texto de `hello.txt` . Al correrlo por segunda vez, el archivo no reconstruye el target del mismo nombre, ya que su dependencia `out/hello.txt` existe y no ha cambiado (verificado por la marca de tiempo). Este archivo no hace nada lo cual verifica la idempotencia del `build`, ya que siempre que exista su dependencia `out/hello.txt` y esta no haya sido modificada, este no hará nada (la receta del build esta vacia).
 3. `-e ` se encarga de que bash salga si cualquier comando tiene un estado de salida diferente de 0 (evidenciado en el ejemplo, que para al encontrar un codigo de salida de 2, detiene ejecución, lo que no crea el archivo), esto en bash esta desactivado por defecto lo cual puede ser critico para un script ya que si se continua de forma exitosa, el estado de salida al final del script va a ser diferente de 0, `-u` asegura que si se referencia una variable no definida anteriormente, el programa finalice. `-o pipefail` evita que se oculten errores en una pipeline, ya que estos por defecto retornan el codigo de salida del último comando, lo cual puede llevar a que errores inesperados (por ejemplo, si en una linea anterior se quiere usar el texto de un archivo y luego ordenarlo, tendrá código de salida 0 incluso si el archivo no existe), por último, `.DELETE_ON_ERROR` elimina el archivo target si ocurre un error en la receta. Los tres primeros ayudan a identificar errores en scripts que pueden pasarse por alto en ejecución y `.DELETE_ON_ERROR` limpia archivo del target (potencialmente corruptos luego del error), lo cual evita que se tenga que eliminar el archivo manualmente.
@@ -22,13 +22,13 @@
 Notamos que los hashes son exactamente iguales, lo que indica que el archivo es exactamente el mismo luego de empaquetar por segunda vez. La opcion `--sort=name` hace que los directorios se lean en un orden (en este caso por nombre), por lo general, el SO suele entregar entradas de directorio en un orden aleatorio, por lo cual ordenarlos permite que el archivo sea constante.`mtime=@0` establece la fecha de modificación de los ficheros a `mié 31 dic 1969 19:00:00 -05`, el cual es la marca de tiempo desde la cual se mide el Tiempo POSIX, lo cual hace que la fecha de modificación sea constante sin importar cuantas veces se reempaquete. `--numeric-owner` hace que siempre se usen números para nombres de usuario y grupos (usando UIDs y GIDs, respectivamente), los cuales son fijados por `--owner=0 --group=0`, evitando que estos varien, y por último `gzip -n` hace que no se restaure ni el nombre ni la marca de tiempo original, lo cual evita que estos se modifiquen al reempaquetar.
 8. El TAB esta para diferenciar las líneas de receta de otras lineas de codigo, como pueden ser los targets o lineas de definición de variables, no tiene que ser necesariamente un tab, de hecho. El caracter que make usa para diferenciar lineas de receta esta en la variable `.RECIPEPREFIX` la cual se puede cambiar a cualquier otro carácter. Para un diagnostico rápido, se puede ubicar la linea causante del error en un editor de texto con lineas numeradas (usando la información dada por el error) y verificar si la indentación del inicio de la linea esta hecha correctamente.
 
-###1.3.-
+### 1.3.-
 - Pasa el test y `echo $?` da como resultado 0
 - Falla el test por salida inesperada y `$?` tiene valor 2, ya que trap ejecuta `cleanup()` el cual retorna con el mismo código que el último test ejecutado, este tambien restaura `hello.py` en caso su .bak exista
 - Al ejecutar `bash -x scripts/run_tests.sh` se aprecia mejor lo anterior, especialmente el como el trap ejecuta `cleanup` pasandole el código de salida del test como argumento, en este caso 2, si se arregla, se ve como pasa el estado 0 al cleanup, y no se restaura hello.py al no existir el .bak
 - Efectivamente, al output quedar indefinida, el script comunica en terminal `scripts/run_tests.sh: línea 46: output: variable sin asignar`, esto gracias al `set -u`, lo cual detiene la ejecucion, y el trap devuelve codigo de salida 2
 
-##PARTE 2:
+## PARTE 2:
 - Al mostrar los comandos, se evidencia el orden `tools > lint > build > test > package`, esto dado por las dependencias de `all` las cuales son justamente estos objetivos en ese orden. En la parte de `build` se evidencia el uso de `$@` y `$<`, los cuales son reemplazados por `out/hello.txt` y `src/hello.py` respectivamente en `python3 src/hello.py > out/hello.txt`
 - Despues de localizar las lineas similares "Se considera el archivo objetivo" y "debe reconstruir", se puede notar que `out/hello.txt` no se recompila ya que según las marcas de tiempo, la dependencia 'src/hello.py' es anterior al objetivo 'out/hello.txt', lo cual indica que la dependencia no cambió desde que se construyó o cambió el archivo objetivo por última vez, por lo tanto, no es necesario reconstruir el objetivo. `mkdir -p $(@D)` logra hacer el directorio `out` gracias a que `@D` contiene la parte de directorio del nombre del archivo objetivo sin el slash, el cual al ser `out/hello.txt` equivale a `out`
 - Se comprueba fallo de al requerirse GNU tar, mientras tanto, `--sort`, `--numeric-owner` y `--mtime` ayudan con la reproducibilidad al permitir fijar ciertos valores del paquete, (el orden en el que se procesan los directorios, el nombre del usuario dueño via UID y la marca de tiempo de modificación, respectivamente). Estos al ser constantes no cambian al reempaquetar múltiples veces.
@@ -44,16 +44,16 @@ Aquí se evidencia la importancia de `--sort`, `--numeric-owner` y `--mtime` del
 - Las dependencias evitan condiciones de carrera al estas ser requeridas (se deben construir antes de avanzar con el objetivo), y `mkdir -p $(@D)` asegura que el folder `out` este creado tanto si `build` o `package` llega primero
 - luego de ejecutar, se nota que `All checks passed!`, lo cual indica que el script esta escrito correctamente (sin errores de sintaxis), mientras `shfmt` no realizo ningun cambio, lo que indica que ya estaba formateado acorde al estándar de `shfmt`
 
-##PARTE 3:
-###3.1
+## PARTE 3:
+### 3.1
 - Luego de romper el quoting de `$tmp`, `shellcheck` detecta la double quote faltante, e indica que estan para evitar globbing y word splitting (partición de palabras).
-###3.2
+### 3.2
 - luego de eliminar archivo temporal, el script falla limpiamente con error 3
 ```bash
 Error: archivo temporal perdido
 make: *** [Makefile:29: test] Error 3
 ```
-###3.3
+### 3.3
 - luego de eliminar archivo temporal, el script falla limpiamente con error 3
 ```bash
 Error: archivo temporal perdido
@@ -123,5 +123,5 @@ SHA256_1=6527269e88253fb573312386dda40e33d6d73b6bb28604510fec567afae70240
 SHA256_2=6527269e88253fb573312386dda40e33d6d73b6bb28604510fec567afae70240
 OK: reproducible
 ```
-##Conclusion operativa:
+## Conclusion operativa:
 - Pipeline ha demostrado ser apto para CI/CD, primero al verificar si las dependencias requeridas para el correcto funcionamiento de la app, la idempotencia que se puede implementar como se vio en este laboratorio, también el reporte de errores y limpieza de estos. Con herramientas como make se pueden automatizar tests para evitar que errores criticos de un commit terminen pasando a etapas avanzadas de desarrollo y causen futuros estragos.
