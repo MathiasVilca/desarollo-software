@@ -44,4 +44,84 @@ Aquí se evidencia la importancia de `--sort`, `--numeric-owner` y `--mtime` del
 - Las dependencias evitan condiciones de carrera al estas ser requeridas (se deben construir antes de avanzar con el objetivo), y `mkdir -p $(@D)` asegura que el folder `out` este creado tanto si `build` o `package` llega primero
 - luego de ejecutar, se nota que `All checks passed!`, lo cual indica que el script esta escrito correctamente (sin errores de sintaxis), mientras `shfmt` no realizo ningun cambio, lo que indica que ya estaba formateado acorde al estándar de `shfmt`
 
-##PARTE :
+##PARTE 3:
+###3.1
+- Luego de romper el quoting de `$tmp`, `shellcheck` detecta la double quote faltante, e indica que estan para evitar globbing y word splitting (partición de palabras).
+###3.2
+- luego de eliminar archivo temporal, el script falla limpiamente con error 3
+```bash
+Error: archivo temporal perdido
+make: *** [Makefile:29: test] Error 3
+```
+###3.3
+- luego de eliminar archivo temporal, el script falla limpiamente con error 3
+```bash
+Error: archivo temporal perdido
+make: *** [Makefile:29: test] Error 3
+```
+- Luego de ejecutar dos veces benchmark:
+```bash
+Benchmark: 2025-09-27 01:36:39 / Commit: 0e7e858
+make[1]: Entering directory '/home/exsos/Escritorio/General/desarrollo-software/Actividad5-CC3S2/Laboratorio2'
+shellcheck scripts/run_tests.sh
+shfmt -d scripts/run_tests.sh
+All checks passed!
+scripts/run_tests.sh
+Demostrando pipefail:
+Sin pipefail: el pipe se considera exitoso (status 0).
+Con pipefail: se detecta el fallo (status != 0).
+Test pasó: Hello, World!
+python3 -m unittest discover -s tests -v
+test_greet (test_hello.TestGreet.test_greet) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+make[1]: Leaving directory '/home/exsos/Escritorio/General/desarrollo-software/Actividad5-CC3S2/Laboratorio2'
+Tiempo: 0:00.37
+```
+- Luego de reiniciar marca de tiempo, `build`, `test` y `package se rehacen`
+```bash
+Benchmark: 2025-09-27 01:38:15 / Commit: 0e7e858
+make[1]: Entering directory '/home/exsos/Escritorio/General/desarrollo-software/Actividad5-CC3S2/Laboratorio2'
+shellcheck scripts/run_tests.sh
+shfmt -d scripts/run_tests.sh
+All checks passed!
+mkdir -p out
+python3 src/hello.py > out/hello.txt
+scripts/run_tests.sh
+Demostrando pipefail:
+Sin pipefail: el pipe se considera exitoso (status 0).
+Con pipefail: se detecta el fallo (status != 0).
+Test pasó: Hello, World!
+python3 -m unittest discover -s tests -v
+test_greet (test_hello.TestGreet.test_greet) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+mkdir -p dist
+tar --sort=name --owner=0 --group=0 --numeric-owner --mtime='UTC 1970-01-01' -czf dist/app.tar.gz -C out hello.txt
+make[1]: Leaving directory '/home/exsos/Escritorio/General/desarrollo-software/Actividad5-CC3S2/Laboratorio2'
+Tiempo: 0:00.40
+```
+- `make help` lista todos los objetivos y extrae apropiadamente de comentarios, se probo `make tools` en partes anteriores
+- Flags deterministas garantizan reprodicibilidad, `out/hello.txt` existe y `app.tar.gz` contiene unico folder `app` con `hello.txt`
+- Comparacion de tiempos hecha hace dos puntos, hubo una diferencia de 0.03 segundos cuando se tuvo que reconstruir `build`, `test` y `package`. Grafo de dependencias condiciona ciertos objetivos a ciertas dependencias, busca ruta de menore número de reconstrucciones
+- Test falla con código de salida 2:
+```bash
+Test falló: salida inesperada
+make: *** [Makefile:29: test] Error 2
+```
+- `make lint` no detecto ningun problema, ni `ruff`, se aplico formato con `make format`
+- Se limpia completamente y vuelve a construir con `make dist-clean` y `make all`
+- Se verifica reproducibilidad: hashes son los mismos
+```bash
+SHA256_1=6527269e88253fb573312386dda40e33d6d73b6bb28604510fec567afae70240
+SHA256_2=6527269e88253fb573312386dda40e33d6d73b6bb28604510fec567afae70240
+OK: reproducible
+```
+##Conclusion operativa:
+- Pipeline ha demostrado ser apto para CI/CD, primero al verificar si las dependencias requeridas para el correcto funcionamiento de la app, la idempotencia que se puede implementar como se vio en este laboratorio, también el reporte de errores y limpieza de estos. Con herramientas como make se pueden automatizar tests para evitar que errores criticos de un commit terminen pasando a etapas avanzadas de desarrollo y causen futuros estragos.

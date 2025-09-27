@@ -71,3 +71,11 @@ EOF
 # Ejecutar
 check_deps
 run_tests "${SRC_DIR}/hello.py"
+
+#echo "$tmp" >out/tmp_path.txt
+#sleep 3
+# Al final de run_tests (sin cambiar nada más)
+if [[ ! -f "$tmp" ]]; then
+	echo "Error: archivo temporal perdido"
+	exit 3
+fi
