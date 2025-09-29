@@ -1,0 +1,27 @@
+git merge feature/cherry-pick 
+Auto-fusionando main.py
+CONFLICTO (contenido): Conflicto de fusión en main.py
+Fusión automática falló; arregle los conflictos y luego realice un commit con el resultado.
+
+main.py
+
+print('Hello World-actualiado en main')
+print('Hello World')
+
+def greet():
+    print('Hello como una función avanzada')
+    print('Error corregido en la función')
+
+greet()
+print('Cherry pick! ')
+<<<<<<< HEAD
+print('cambio de ejemplo')
+=======
+print('Ejemplo! ')
+Este cambio está en el stash
+>>>>>>> feature/cherry-pick
+
+Se soluciona conservando cambios de ambos (solo se eliminan los <<<,>>> y =====
+Luego de solucionar conflicto:
+user@pc:~/Escritorio/General/example_repo/mv-repo$ git merge feature/cherry-pick 
+Ya está actualizado.

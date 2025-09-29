@@ -1,0 +1,5 @@
+usuario@pc:~/Escritorio/General/example_repo/mv-repo$ git add .
+usuario@pc:~/Escritorio/General/example_repo/mv-repo$ git commit -m 'commit de ejemplo'
+[master c25ecb9] commit de ejemplo
+ 1 file changed, 1 insertion(+)
+

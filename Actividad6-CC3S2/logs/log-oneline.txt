@@ -1,0 +1,10 @@
+c25ecb9 (HEAD -> master) commit de ejemplo
+4c4694d Agrega ejemplo de cherry-pick
+6e45828 Solucion de conflicto en main.py
+d0f873e Corregir error en la funcionalidad de rollback
+83b42cf Agrega la funcion greet como función avanzada
+b168882 Actualizar el mensaje main.py en la rama main
+820d606 Agrega main.py
+f598d64 Configura la documentación base del repositorio
+acb8d73 Commit inicial con README.md
+
