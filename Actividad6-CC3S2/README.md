@@ -3,6 +3,7 @@
 - OS: Ubuntu 24.04.3 LTS
 - Shell(Bash): 5.2.21(1)-release
 - git: git version 2.43.0
+## git config
 Con `git config` se puede configurar Git en diferentes niveles, en general se suele usar para configurar el nombre de usuario y email de forma global usando `git config --global user.name` y `git config --global user.email`
 ## git init
 Con `git init` se inicia un repositorio git en el folder actual, en el cual se crea un directorio `.git` (oculto por defecto) el cual tiene la configuración necesaria para el control de versiones.
