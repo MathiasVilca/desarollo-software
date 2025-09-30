@@ -33,8 +33,8 @@ obviamente luego tuve que añadir este cambio
 #### ¿Qué prácticas (convenciones, PRs pequeñas, tests) lo evitarían?
 Entre algunas recomendaciones están: tener estándares en el formato del código para evitar conflictos en lineas, hacer commits con PRs pequeños y frecuentes (esto porque en general no suelen tener muchos conflictos, al ser pocos los cambios, en lugar de un gran commit el cual crea demasiados conflictos y cuyo PR es complicado de revisar), y el tener una buena comunicación para evitar cruces en las áreas en las que se trabaja.
 
-### Ejercicio 5
-
+### Ejercicio 5-7
+NOTA: PARA LAS VISTAS 05-07, SE USO UN MISMO REPOSITORIO, SE PUEDE VER DAG DE ESTE EN `evidencias/capturas/DAG-evidencias05-07`
 
 
 
