@@ -1,0 +1,9 @@
+commit a31f02691a6f505105b2ede146405b7d97331ec2
+gpg: Firmado el mar 30 sep 2025 00:43:52 -05
+gpg:                usando EDDSA clave 7C4C8070A903F8C7660F3AD7F812E42471A091D9
+gpg: Firma correcta de "MathiasV (Prueba de signed commit) <email>" [absoluta]
+Merge: 3c791a8 62d6472
+Author: MathiasVilca <email>
+Date:   Tue Sep 30 00:43:50 2025 -0500
+
+    Merge branch 'feature-signed'

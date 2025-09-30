@@ -1,0 +1,10 @@
+* 76845e7 (HEAD -> main) Squash de rama1: 2.txt y 3.txt
+* c0d2968 Añadir b.txt en main
+* 21c9e79 Merge branch 'rama1': Ejemplo de merge sin fast foward
+* 107f5c6 Añadir a.txt en main
+| * 8ecc336 (rama1) Añadir 3.txt en rama1
+| * b9f9d1d Añadir 2.txt en rama1
+| * e8a60a8 Añadir 1.txt en rama1
+|/  
+* e268d7a Commit inicial en rama1
+* cbabd18 Commit inicial
