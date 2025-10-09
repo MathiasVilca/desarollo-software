@@ -16,4 +16,10 @@ self.assertEqual(self.stack.peek(), 3)
 ```
 Asegura que el método `push(3)` haya funcionado al verificar que el elemento de la parte superior del stack sea igual a 3 (vía `peek()`).  
 Se tuvo que arreglar error en `test_is_empty()` ya que siempre se requiere poner `self` como primer argumento en unittest, esto se puede ver en los ejemplos brindados en `Instrucciones.md` de la actividad.
-### 2. 
+### 2. `pruebas_pytest`
+Para ejecutar `pytest --cov=pruebas_pytest` se debe hacer una carperta arriba (en `soluciones`) y especificando que se quiere ejecutar en esa carpeta (en este caso al estar las otras actividades), asi que se ejecuta:
+```python
+pytest --cov=pruebas_pytest pruebas_pytest/
+```
+Se guardaron reportes html en la misma carpeta de la actividad (diferenciando el reporte generado por el modulo con el nombre `htmlcov_modulo`, el cual se ejecuto en `soluciones/`).
+## 3.
