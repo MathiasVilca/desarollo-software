@@ -14,4 +14,6 @@ Las aserciones en los test se usan para aseverar que ciertas condiciones se cump
 self.stack.push(3)
 self.assertEqual(self.stack.peek(), 3)
 ```
-Asegura que el método `push(3)` haya funcionado al verificar que el elemento de la parte superior del stack sea igual a 3 (vía `peek()`)
+Asegura que el método `push(3)` haya funcionado al verificar que el elemento de la parte superior del stack sea igual a 3 (vía `peek()`).  
+Se tuvo que arreglar error en `test_is_empty()` ya que siempre se requiere poner `self` como primer argumento en unittest, esto se puede ver en los ejemplos brindados en `Instrucciones.md` de la actividad.
+### 2. 
