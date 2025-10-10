@@ -37,3 +37,5 @@ def setup_database():
 
 El cual esta a nivel de módulo (lo que significa que se ejecuta una vez por archivo de pruebas), y `autouse=True` significa que todos los test pan a usar ese fixture (el cual normalmente se pide). Este fixture inicia la conexión con la base de datos antes de ejecutar todas las pruebas del módulo, y posterior a ejecución, cierra esta conexión.  
 Mientras tanto, el método `setup_class(cls)` carga los datos del json a la base de datos, y `teardown_class(cls)` no hace nada (`pass` no hace nada, de la desconexión se encarga el fixture). Por último, `setup_method(cls)` limpia los datos antes de cada prueba y `teardown_method(cls)` cierra la sesion despues de cada prueba
+### 4. Cobertura de pruebas
+Disculpe profesor no lo pude avanzar más :(
